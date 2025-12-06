@@ -126,7 +126,7 @@ neye -e ".c .cpp .h .v .vh" -r "make sim" /path/to/npc
 
 **注意**：使用`pkill`后可能需要手动清理PID文件：
 ```bash
-rm -f /tmp/neye.pid
+rm -f ~/.config/neye.pid
 ```
 
 ## 后台运行
@@ -142,19 +142,6 @@ ls, cd, vim 等
 
 # 需要退出时，在同一终端输入
 neye quit
-```
-
-### 持久后台运行
-
-```bash
-# 关闭终端后继续运行
-nohup neye . > /tmp/neye.log 2>&1 &
-
-# 查看日志
-tail -f /tmp/neye.log
-
-# 需要停止时
-pkill neye
 ```
 
 **注意**：使用 `&` 后台运行时，必须在同一终端窗口输入 `neye quit`。如果关闭了终端，neye进程会被终止。
